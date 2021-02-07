@@ -12,7 +12,7 @@ cabal build sokoban
 
 Levels are defined in XSB format. Every level must be separated with a
 **blank line** (no white spaces).
-Currently the floor is only encoded as <space>.
+Currently the floor is only encoded as 'space'.
 
 Valid levels are from 1...50.
 
