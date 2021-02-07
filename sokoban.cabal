@@ -4,7 +4,7 @@ name:                sokoban
 version:             0.1.0.0
 synopsis:            Sokoban game in a terminal
 -- description:
--- bug-reports:
+bug-reports:         https://github.com/pbing/sokoban/issues
 license:             Unlicense
 license-file:        LICENSE
 author:              Bernd Beuster
@@ -12,6 +12,10 @@ maintainer:          bernd.beuster@gmail.com
 -- copyright:
 category:            Game
 extra-source-files:  CHANGELOG.md
+
+source-repository    head
+  type:              git
+  location:          https://github.com/pbing/sokoban.git
 
 executable sokoban
   main-is:             Main.hs
