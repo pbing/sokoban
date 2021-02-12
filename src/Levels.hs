@@ -6,7 +6,7 @@ import Board
 
 -- read a XSB file and return all of its level descriptions
 levelsFromXSBFile :: FilePath -> IO [Board]
-levelsFromXSBFile fp = do
+levelsFromXSBFile fp =
   map mkBoard . splitLevels . lines . map floorTile <$> readFile fp
 
 -- handle different floor tiles in XSB files
