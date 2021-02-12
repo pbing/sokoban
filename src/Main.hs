@@ -15,7 +15,7 @@ main = do
   if null args then
     usage prog
     else do
-      lvls <- levelsFromFile "levels/sokoban_levels.xsb"
+      lvls <- levelsFromXSBFile "levels/sokoban_levels.xsb"
       let n = max (read $ head args) 1
       hSetBuffering stdin NoBuffering
       hSetEcho stdin False

@@ -1,20 +1,28 @@
-module Levels (levelsFromFile) where
+module Levels (levelsFromXSBFile) where
 
 import Data.Array
 
 import Board
 
-levelsFromFile :: FilePath -> IO [Board]
-levelsFromFile fp = do
-  lns <- lines <$> readFile fp
-  return $ map mkLevel (lvls lns)
-  where
-    lvls [""] = [[""]]
-    lvls s    = let (x, xs) = break null s
-                in x : lvls (tail xs)
+-- read a XSB file and return all of its level descriptions
+levelsFromXSBFile :: FilePath -> IO [Board]
+levelsFromXSBFile fp = do
+  map mkBoard . splitLevels . lines . map floorTile <$> readFile fp
 
-mkLevel :: [String] -> Board
-mkLevel xs = Board (array ((1, 1), (rows, cols)) $ zip idx ys)
+-- handle different floor tiles in XSB files
+floorTile :: Char -> Char
+floorTile '-' = ' '
+floorTile '_' = ' '
+floorTile x   = x
+
+-- empty lines separate the levels
+splitLevels :: [String] -> [[String]]
+splitLevels [""] = [[""]]
+splitLevels s    = let (x, xs) = break null s
+                   in x : splitLevels (tail xs)
+
+mkBoard :: [String] -> Board
+mkBoard xs = Board (array ((1, 1), (rows, cols)) $ zip idx ys)
   where
     cols = maximum $ map length xs
     rows = length xs
