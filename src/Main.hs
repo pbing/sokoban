@@ -31,14 +31,14 @@ usage prg = do
   putStrLn "    $       box"
   putStrLn "    *       box on goal"
   putStrLn "    #       wall"
-  putStrLn "    .       goal\n"
-  putStrLn "    <space> floor"
+  putStrLn "    .       goal"
+  putStrLn "    <space> floor\n"
   putStrLn "Control"
   putStrLn "    w       up"
   putStrLn "    a       left"
   putStrLn "    s       down"
   putStrLn "    d       right"
-  putStrLn "    q       quit game"
+  putStrLn "    q       quit game\n"
 
 playLoop :: Board -> IO ()
 playLoop brd = do
