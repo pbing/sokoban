@@ -31,5 +31,5 @@ move (dy, dx) brd@(Board brd') = Board (accum (const id) brd' (alist curr nxt1 n
     alist _ _ _       = []
 
 findPlayer :: Board -> (Position, Char)
-findPlayer (Board brd) = fromJust $ find p $ assocs brd
+findPlayer (Board brd) = fromJust . find p $ assocs brd
   where p (_, e) = e == '@' || e == '+'
