@@ -25,20 +25,20 @@ usage :: String -> IO ()
 usage prg = do
   putStrLn "Usage"
   putStrLn $ "  " ++ prg ++ " <level>\n"
-  putStrLn "Tiles"
-  putStrLn "    @       man"
-  putStrLn "    +       man on goal"
-  putStrLn "    $       box"
-  putStrLn "    *       box on goal"
-  putStrLn "    #       wall"
-  putStrLn "    .       goal"
-  putStrLn "    <space> floor\n"
-  putStrLn "Control"
-  putStrLn "    w       up"
-  putStrLn "    a       left"
-  putStrLn "    s       down"
-  putStrLn "    d       right"
-  putStrLn "    q       quit game\n"
+  putStrLn "Tiles\n\
+  \    @       man\n\
+  \    +       man on goal\n\
+  \    $       box\n\
+  \    *       box on goal\n\
+  \    #       wall\n\
+  \    .       goal\n\
+  \    <space> floor\n\n\
+  \Control\n\
+  \    w       up\n\
+  \    a       left\n\
+  \    s       down\n\
+  \    d       right\n\
+  \    q       quit game\n"
 
 playLoop :: Board -> IO ()
 playLoop brd = do
