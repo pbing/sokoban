@@ -1,0 +1,13 @@
+cradle:
+  cabal:
+    - path: "src/Main.hs"
+      component: "sokoban:exe:sokoban"
+
+    - path: "src/Board.hs"
+      component: "sokoban:exe:sokoban"
+
+    - path: "src/Levels.hs"
+      component: "sokoban:exe:sokoban"
+
+    - path: "src/Sokoban.hs"
+      component: "sokoban:exe:sokoban"
